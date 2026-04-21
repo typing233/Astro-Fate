@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Fate - 命运星图</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="starCanvas" class="star-canvas"></canvas>
+        
+        <div id="introScreen" class="screen active">
+            <div class="content-wrapper">
+                <h1 class="title">Astro Fate</h1>
+                <p class="subtitle">命运星图</p>
+                <p class="description">
+                    在这个神秘的数字艺术空间，<br>
+                    你的每一次犹豫、每一次停顿，<br>
+                    都将成为解读命运的密码。
+                </p>
+                <p class="instruction">
+                    请依次回答5道诗意的问题，<br>
+                    让星辰揭示你内心的命运轨迹。
+                </p>
+                <button id="startBtn" class="btn primary-btn">开始探索</button>
+            </div>
+        </div>
+
+        <div id="questionScreen" class="screen">
+            <div class="content-wrapper">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                    <span id="progressText" class="progress-text">1 / 5</span>
+                </div>
+                
+                <div id="questionContainer" class="question-container">
+                    <h2 id="questionText" class="question-text"></h2>
+                    <div id="optionsContainer" class="options-container"></div>
+                </div>
+                
+                <div class="navigation">
+                    <button id="prevBtn" class="btn secondary-btn" style="visibility: hidden;">上一题</button>
+                    <button id="nextBtn" class="btn primary-btn" disabled>下一题</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingScreen" class="screen">
+            <div class="content-wrapper">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">星辰正在解读你的命运...</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultScreen" class="screen">
+            <div class="content-wrapper">
+                <div class="result-header">
+                    <h2 class="result-title">你的命运判词</h2>
+                    <div class="star-container" id="starResultContainer">
+                        <canvas id="resultStarCanvas" class="result-star-canvas"></canvas>
+                    </div>
+                </div>
+                
+                <div class="fortune-container">
+                    <p id="fortuneText" class="fortune-text"></p>
+                </div>
+                
+                <div class="result-actions">
+                    <button id="restartBtn" class="btn primary-btn">再测一次</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
